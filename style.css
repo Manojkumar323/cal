@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #00AAFF;
+    font-weight: normal;
+}
+.calculator_grid{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto) repeat(5,100px);
+}
+.calculator_grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+.calculator_grid > button:hover{
+    background-color: rgba(255, 255, 255, .90);
+}
+.span_2{
+    grid-column: span 2;
+}
+.display_input{
+    /* grid-column: 1/span 3; or  */
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+}
+.display_input .previous_no{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+.display_input .second_no{
+    color: white;
+    font-size: 2.5rem;
+}
